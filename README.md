@@ -1,12 +1,13 @@
 # Super Grill
 
-Super Grill is a complete thermal-governance methodology for coding agents.
-It combines a long, stage-gated software workflow with relentless
-decision-tree interviewing, then adds mandatory re-grilling at the exact moment
-a reasonable process would normally move on.
+Super Grill combines Superpowers and Grill Me into one advanced skill—a
+complete development workflow that questions every decision from idea to
+completion.
 
 Your agent wants to write code after asking two clarifying questions. Super
 Grill treats this as a control failure.
+
+![Superpowers writes a twelve-stage plan, Grill Me asks forty-two questions, and Super Grill does both to rename one button.](assets/super-grill-comparison.png)
 
 ## Quickstart
 
