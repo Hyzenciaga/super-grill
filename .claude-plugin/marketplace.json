@@ -1,0 +1,23 @@
+{
+  "name": "super-grill",
+  "owner": {
+    "name": "Super Grill contributors"
+  },
+  "metadata": {
+    "description": "A self-hosted marketplace for the Super Grill parody workflow."
+  },
+  "plugins": [
+    {
+      "name": "super-grill",
+      "source": "./",
+      "description": "Turn tiny tasks into fully staffed, repeatedly inspected planning barbecues.",
+      "category": "development",
+      "keywords": [
+        "skills",
+        "grilling",
+        "workflow",
+        "parody"
+      ]
+    }
+  ]
+}

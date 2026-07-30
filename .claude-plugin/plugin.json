@@ -1,0 +1,21 @@
+{
+  "name": "super-grill",
+  "version": "0.2.0",
+  "description": "Ceremonially overcook tiny tasks with relentless grilling, sub-agent pageantry, and repeated inspections.",
+  "author": {
+    "name": "Super Grill contributors"
+  },
+  "homepage": "https://github.com/Hyzenciaga/super-grill",
+  "repository": "https://github.com/Hyzenciaga/super-grill",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "grilling",
+    "workflow",
+    "subagents",
+    "parody"
+  ],
+  "skills": [
+    "./"
+  ]
+}
