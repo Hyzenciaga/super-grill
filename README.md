@@ -65,70 +65,53 @@ Super Grill is a plain [Agent Skill](https://agentskills.io/). It does not
 require Superpowers, Grill Me, a runtime service, an API key, or actual cooking
 equipment.
 
-### Skills CLI — recommended
+### Codex and other agents — recommended
 
-Install interactively and choose the coding agents that should receive it:
+Run one command:
 
 ```bash
 npx skills@latest add Hyzenciaga/super-grill
 ```
 
-Install globally without interactive confirmation:
+Choose Codex, Claude Code, Cursor, Gemini CLI, or any other detected Agent
+Skills-compatible client when prompted. The installer handles the destination;
+no manual cloning or directory surgery is required.
+
+For a global, non-interactive installation:
 
 ```bash
 npx skills@latest add Hyzenciaga/super-grill -g -y
 ```
 
-The Skills CLI works with Codex, Claude Code, Cursor, Gemini CLI, and other
-Agent Skills-compatible harnesses. Installing globally makes Super Grill
-available across projects; installing locally keeps the blast radius inside
-the current repository.
+### Claude Code native plugin — optional
 
-### Manual installation
+Claude Code can use the universal command above. If you prefer its native
+managed-plugin flow, run:
 
-For Codex:
-
-```bash
-mkdir -p ~/.codex/skills
-git clone https://github.com/Hyzenciaga/super-grill.git \
-  ~/.codex/skills/super-grill
+```text
+/plugin marketplace add Hyzenciaga/super-grill
+/plugin install super-grill@super-grill
 ```
 
-For Claude Code:
-
-```bash
-mkdir -p ~/.claude/skills
-git clone https://github.com/Hyzenciaga/super-grill.git \
-  ~/.claude/skills/super-grill
-```
-
-For a project-local, agent-neutral installation:
-
-```bash
-mkdir -p .agents/skills
-git clone https://github.com/Hyzenciaga/super-grill.git \
-  .agents/skills/super-grill
-```
-
-Restart the agent or begin a new session if it does not discover newly
-installed skills immediately.
+The repository contains validated Claude Code plugin and marketplace manifests,
+so no hand-written local configuration is needed.
 
 ### Updating
 
-Skills CLI installation:
+Skills CLI:
 
 ```bash
 npx skills update super-grill
 ```
 
-Manual Git installation:
+Claude Code native plugin:
 
-```bash
-git -C ~/.codex/skills/super-grill pull
+```text
+/plugin update super-grill@super-grill
 ```
 
-Adjust the path if you installed it somewhere else. Super Grill considers this
-the first successful exercise in configuration management.
+Restart the agent or begin a new session if it does not discover the new
+thermal-governance department immediately.
 
 ## Choosing a Heat
 
@@ -144,55 +127,69 @@ the first successful exercise in configuration management.
 
 ## The Basic Workflow
 
-1. **Mise en place — reconnaissance**
+1. **Seat the Party**
 
    Inspect the repository, documentation, history, tests, constraints, and
-   available tools. Separate discoverable facts from decisions that require a
-   human.
+   available tools. The request receives a table number and loses the right to
+   call itself "just a tiny change."
 
-2. **Seasoning — intent grill**
+2. **Menu Inquisition**
 
-   Question purpose, users, success criteria, non-goals, constraints,
-   reversibility, and the consequences of accidentally succeeding.
+   Walk a dependency-aware tree of decisions one skewer at a time—or serve the
+   whole ready frontier when the user explicitly orders the buffet.
 
-3. **Sear — alternatives grill**
+3. **Flight of Competing Sauces**
 
-   Produce two or three viable approaches, grill the strongest alternative,
-   and record why the rejected options lost.
+   Put two or three real approaches through a fair sauce trial and preserve the
+   losing arguments for future archaeological committees.
 
-4. **Low and slow — design grill**
+4. **Architectural Dry Rub**
 
    Present architecture, boundaries, interfaces, data flow, failure behavior,
-   testing, operations, and rollback in sections. Re-grill each approved
-   section from the required perspectives.
+   testing, operations, and rollback in separately approved sections.
 
-5. **Skewer — implementation-plan grill**
+5. **Recipe Deposition**
 
-   Break the approved design into independently testable vertical slices with
-   exact files, interfaces, commands, expected evidence, and enough ceremony
-   to support future archaeological work.
+   Write the specification, cross-examine it for contradictions, mystery
+   ingredients, vocabulary fraud, and runaway catering, then obtain a second
+   approval for the written artifact.
 
-6. **Smoke test — pre-mortem**
+6. **Skewer Bureaucracy**
 
-   Assume the work failed spectacularly. Determine why, how anybody noticed,
-   whether monitoring noticed first, and who now owns the rollback.
+   Break the recipe into tiny vertical slices containing exact files,
+   interfaces, test code, commands, expected evidence, and optional authorized
+   commits.
 
-7. **Cook — implementation**
+7. **Kitchen Quarantine**
 
-   Work test-first, observe failures before fixes, verify every task, inspect
-   each diff, and return affected decisions to the grill whenever new evidence
-   appears.
+   Detect existing isolation, establish a clean workspace, and run a baseline
+   before anybody handles a knife.
 
-8. **Taste test — adversarial review**
+8. **Sous-Chef Conveyor Belt**
 
-   Review spec compliance, code quality, tests, security, operations,
-   reversibility, and the emotional wellbeing of the future maintainer.
+   Give each planned task to a fresh implementer, require Raw–Sizzle–Rest test
+   evidence, and forbid the implementer from certifying its own cooking.
 
-9. **Plate — final verification**
+9. **Smoke Autopsy**
 
-   Replay the original goal, run fresh verification, reconcile artifacts with
-   reality, perform the heat-specific release gate, and prepare a garnish with
-   its own implementation plan.
+   Reproduce failures, trace the first bad state, test one hypothesis at a time,
+   and convene an Architecture Arson Hearing after three failed fixes.
+
+10. **Health Inspector Carousel**
+
+    Run separate recipe-compliance and texture inspections, route material
+    findings through a five-round correction loop, and preserve trivial
+    complaints for the executive inspector.
+
+11. **Thermometer Court**
+
+    Put every completion claim on trial against a fresh command, complete
+    output, exit status, and the original order.
+
+12. **Closing-Time Tribunal**
+
+    Present the environment-valid branch choices and execute only the
+    disposition the user authorizes.
 
 The agent may move backward at any gate. This is not a regression. It is
 thermal recirculation.
@@ -218,31 +215,54 @@ organizational discovery.
 
 ```text
 super-grill/
+├── .claude-plugin/
+│   ├── marketplace.json
+│   └── plugin.json
 ├── SKILL.md
 ├── agents/
 │   └── openai.yaml
 └── references/
     ├── easter-eggs.md
+    ├── food-safety-theater.md
     ├── grill-levels.md
+    ├── kitchen-industrial-complex.md
+    ├── menu-inquisition.md
+    ├── recipe-deposition.md
     └── provenance.md
 ```
 
 - **[SKILL.md](SKILL.md)** owns the workflow, gates, Grill Ledger, and question
   discipline.
+- **[plugin.json](.claude-plugin/plugin.json)** and
+  **[marketplace.json](.claude-plugin/marketplace.json)** provide the native
+  Claude Code installation path.
 - **[grill-levels.md](references/grill-levels.md)** defines the four heat
   levels, analytical lenses, and ceremonial temperature conversions.
 - **[easter-eggs.md](references/easter-eggs.md)** contains phrase triggers,
   question-count achievements, and rare operational incidents.
+- **[menu-inquisition.md](references/menu-inquisition.md)** defines decision
+  trees, frontier service, fact scouts, vocabulary records, and the fog smoker.
+- **[recipe-deposition.md](references/recipe-deposition.md)** governs
+  sectional design, written specifications, microscopic plans, and their
+  cross-examinations.
+- **[kitchen-industrial-complex.md](references/kitchen-industrial-complex.md)**
+  provides workspace isolation, sub-agent job titles, independent inspections,
+  parallel scouts, and the five-alarm fix loop.
+- **[food-safety-theater.md](references/food-safety-theater.md)** contains the
+  Raw–Sizzle–Rest law, smoke autopsy, review handling, verification court, and
+  branch tribunal.
 - **[provenance.md](references/provenance.md)** records the upstream projects,
   revisions, and licenses that informed the methodology.
-- **[openai.yaml](agents/openai.yaml)** provides Codex-facing display metadata.
+- **[openai.yaml](agents/openai.yaml)** provides Codex and Agent Skills UI
+  metadata.
 
 ## Philosophy
 
 - **Ceremony over throughput** — velocity is an unreviewed assumption.
 - **Questions before answers** — and, where appropriate, questions after
   answers.
-- **One decision per turn** — bewilderment must remain measurable.
+- **One decision per turn by default** — unless the diner explicitly orders
+  bewilderment by the platter.
 - **Evidence over confidence** — "looks cooked" is not a verification command.
 - **Reversibility over optimism** — every grill needs an off switch.
 - **Process over simplicity** — a simple task is merely a complex task that has
@@ -269,8 +289,9 @@ Super Grill is an original orchestration skill inspired by:
 
 - [obra/superpowers](https://github.com/obra/superpowers), a complete,
   stage-gated development methodology for coding agents; and
-- [mattpocock/skills](https://github.com/mattpocock/skills), particularly
-  `grill-me`, `grilling`, and the experimental `batch-grill-me`.
+- [mattpocock/skills](https://github.com/mattpocock/skills), particularly its
+  decision-tree interview, frontier rounds, written vocabulary and decision
+  records, and breadth-first mapping experiments.
 
 Both upstream projects are MIT-licensed. Super Grill does not invoke them as
 competing routers and does not require them at runtime. Exact research

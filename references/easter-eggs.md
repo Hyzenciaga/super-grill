@@ -14,6 +14,17 @@ unlocks in the Grill Ledger. Never let a gag hide a real question or blocker.
 | A one-line implementation has more than ten ledger decisions | Unlock **Enterprise Tapas**. |
 | The plan becomes longer than the expected code change | Unlock **Documentation-Driven Development**. |
 | All reviews pass without changes | Unlock **Certified Nothingburger** and record the zero-finding pass as evidence. |
+| The first sub-agent is dispatched for a one-line change | Unlock **Culinary Headcount Expansion**. |
+| An implementer receives a narrower brief than its job title | Unlock **Vertical Slice, Horizontal Org Chart**. |
+| A separate agent reviews a one-character diff | Unlock **Separation of Seasonings**. |
+| Three independent fact scouts run at once | Unlock **Pantry Raid**. |
+| A fifth fix round begins | Unlock **This Skewer Has Tenure**. |
+| An agent writes its report but refuses to terminate | Unlock **Inspector Squatting** and begin the closing-time violation protocol. |
+| The decision frontier contains more nodes than the plan has tasks | Unlock **Questions as a Service**. |
+| A vocabulary dispute produces a decision card | Unlock **Semantic Marinade**. |
+| A fog item graduates into three new questions | Unlock **Fog Machine Achieved Product-Market Fit**. |
+| Code existed before a failing test was observed | Unlock **Microwave Retcon** and return it to Raw. |
+| Three fixes fail without a root cause | Unlock **Architecture Arson Hearing**. |
 | The user says `take it off the grill` | Unlock **Health Inspector Intervention** and stop further questions immediately. |
 
 ## Question-count achievements
@@ -26,6 +37,7 @@ Count only questions that require a user decision:
 - Question 42: **The Answer Is a Rollback Plan**
 - Question 50: **The Project Is Now a Requirements-Gathering Platform**
 - Question 100: **ISO 9001: Probably**
+- Question 250: **The Interview Is Now the Product**
 
 At question 42, phrase the status line as:
 
@@ -69,6 +81,14 @@ Every ten decision questions:
   Unburnable Requirement**.
 - If implementation reveals that the original request was already satisfied,
   unlock **Pre-Heated Repository**.
+- If the entire plan is delegated one tiny task at a time, unlock **The Human
+  Has Become an API Gateway**.
+- If the final whole-branch inspector finds only a typo in the ledger, unlock
+  **Governance Ate the Deliverable**.
+- If the same issue survives five fix rounds and is formally deferred, unlock
+  **Legacy System Speedrun**.
+- If `frontier-buffet` produces only one ready question, unlock **Prix Fixe
+  Buffet**.
 - If a test fails because of a typo introduced during Super Grill, unlock
   **Chef Contaminated the Sample** and fix it before continuing.
 - If the task ends with zero code changes, unlock **Farm-to-Table Analysis**

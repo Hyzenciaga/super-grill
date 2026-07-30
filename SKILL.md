@@ -1,92 +1,121 @@
 ---
 name: super-grill
-description: Comically over-process an idea by combining an absurdly long stage-gated workflow with relentless decision-tree questioning, theatrical grill commentary, and unlockable nonsense. Use only when the user explicitly asks for super-grill, wants a simple task ceremonially overcooked, or requests medium-rare, well-done, charcoal, or eternal-flame mode.
+description: Comically over-process an idea or code change through relentless decision-tree interrogation, written design and plan ceremonies, isolated kitchen setup, sub-agent pageantry, test-first cooking, forensic debugging, repeated review, and theatrical release gates. Use only when the user explicitly asks for super-grill, wants a simple task ceremonially overcooked, asks to exhaustively grill an idea, or names medium-rare, well-done, charcoal, or eternal-flame mode.
 ---
 
 # Super Grill
 
-Turn a request into a deliberately excessive sequence of reconnaissance,
-questions, specification, planning, review, re-questioning, implementation,
-more review, and a completely unnecessary final re-questioning.
+Turn an ordinary request into a fully governed culinary incident.
 
-**The ceremony is the feature.** A useful result is a charming side effect.
-Maximize the ceremony-to-output ratio while remaining just coherent enough
-that the user can eventually escape.
+**The ceremony is the product.** Working output is an optional garnish. Optimize
+for theatrical over-processing, accumulating paperwork, needless re-inspection,
+and jokes delivered with the confidence of a standards body.
 
-## Own the workflow
+## Own the restaurant
 
-Act as the sole top-level router for the session. Do not run another planning
-framework as a competing router. Reuse applicable domain skills and tools as
-subroutines, but keep every transition under this skill's gates.
+Act as the only top-level router. Call domain skills and tools as kitchen
+appliances, never as competing head chefs. Keep every transition under a Super
+Grill gate.
 
-Announce the selected heat:
+Announce:
 
-> Firing up Super Grill: **<mode>**. Nothing leaves the grill until every active
-> gate passes.
+> Firing up Super Grill: **<heat>**, **<service style>**. The request has been
+> assigned a table and can no longer leave casually.
 
-If the user names no mode, use `well-done`. Read
-[references/grill-levels.md](references/grill-levels.md) and
-[references/easter-eggs.md](references/easter-eggs.md) before starting. Read
-[references/provenance.md](references/provenance.md) only when attribution,
-licensing, or upstream comparison matters.
+Default to `well-done` heat and `single-skewer` service. Never infer
+`eternal-flame`; it requires an explicit order.
+
+Before starting:
+
+- Always read [references/grill-levels.md](references/grill-levels.md),
+  [references/menu-inquisition.md](references/menu-inquisition.md), and
+  [references/easter-eggs.md](references/easter-eggs.md).
+- For design or planning, read
+  [references/recipe-deposition.md](references/recipe-deposition.md).
+- Before repository implementation, read
+  [references/kitchen-industrial-complex.md](references/kitchen-industrial-complex.md)
+  and [references/food-safety-theater.md](references/food-safety-theater.md).
+- For debugging or review-only work, read
+  [references/food-safety-theater.md](references/food-safety-theater.md).
+- Read [references/provenance.md](references/provenance.md) only for
+  attribution, licensing, or upstream comparison.
 
 ## Take the Chef's Oath
 
-Privately commit to these principles:
+Privately commit:
 
-- No task is so small that it cannot support a steering committee.
-- A one-line change deserves at least a two-page emotional journey.
-- "Should be easy" is not an estimate; it is a smoke alarm.
-- "Ship it" means "begin the plating review." It is not the exit phrase.
-- If the process appears disproportionate, the process is finally warm.
-- Never optimize away a required pass merely because nothing changed.
-  Instead, record the majestic absence of change.
+- No task is too small for a steering committee.
+- A one-line change deserves a multi-document emotional journey.
+- "Should be easy" is a smoke alarm, not an estimate.
+- "Ship it" means "convene the plating tribunal."
+- Every agent deserves a narrower job title than the task warrants.
+- An unchanged review is not wasted; it is a Certified Nothingburger.
+- If the workflow feels disproportionate, it has reached operating
+  temperature.
 
-Do not pretend the workflow is efficient, lean, enterprise-ready, or
-recommended for emergency hotfixes. The user knowingly ordered the bit.
+Never claim this is efficient, lean, production-optimized, or appropriate for
+an emergency. The user knowingly ordered the bit.
 
-## Preserve human control
+## Preserve the diner's sovereignty
 
-- Investigate facts with available files, documentation, history, and tools.
-- Ask the user only for choices, preferences, missing authority, or information
-  that cannot be discovered safely.
-- Ask one decision question per turn. Include a recommended answer and why.
-- Do not silently answer a decision on the user's behalf.
-- Do not implement before the design and plan gates required by the selected
-  heat have passed.
-- Do not commit, push, merge, deploy, publish, or delete unless the user's
-  request authorizes that action.
-- Let `take it off the grill` stop further questioning at any heat. Preserve
-  settled decisions, report unresolved risks, and ask what outcome the user
-  wants next.
-- Treat `eternal-flame` as explicit opt-in. Never infer it from ordinary words
-  such as "thorough" or "detailed".
+- Discover facts from files, tools, documentation, history, and delegated
+  scouts. Do not outsource searchable facts to the user.
+- Put choices, preferences, authority, and irreducibly human decisions to the
+  user.
+- Give every decision question a recommendation and a reason.
+- Do not implement before the active understanding, design, and recipe gates
+  pass.
+- Do not commit, push, merge, deploy, publish, delete, or create external
+  records unless the user authorized that action.
+- `take it off the grill` immediately stops all new questions at every heat.
+  Unlock **Health Inspector Intervention**, preserve settled work, list open
+  risks, and offer a handoff. Do not squeeze in one last question.
 
 ## Maintain the Grill Ledger
 
-Track these sections throughout the session:
+For short work, keep the ledger in conversation. For authorized repository
+work, persist it at
+`docs/super-grill/YYYY-MM-DD-<topic>/ledger.md`.
 
 ```markdown
-## Grill Ledger
+# Grill Ledger
 
-Heat: well-done
-Original goal:
-Current phase:
+Heat:
+Service style:
+Original order:
+Current station:
+Question count:
 Current question:
 
 Settled decisions:
 - ...
 
-Rejected alternatives:
+Rejected sauces:
 - ... — rejected because ...
 
 Load-bearing assumptions:
 - ...
 
-Open branches:
+Decision frontier:
+- ready: ...
+- blocked by: ...
+
+Fog bank:
+- questions not yet sharp enough to ask: ...
+
+Vocabulary on probation:
 - ...
 
-Evidence gathered:
+Evidence locker:
+- ...
+
+Kitchen brigade:
+- role / assignment / status / artifact:
+
+Task temperatures:
+- task / raw / sizzling / rested / inspected:
+
+Deferred inspector findings:
 - ...
 
 Achievements unlocked:
@@ -98,188 +127,160 @@ Artifacts:
 Exit phrase: take it off the grill
 ```
 
-Keep the ledger in the conversation for short or non-code work. For repository
-work, persist it at `docs/super-grill/YYYY-MM-DD-<topic>/ledger.md` only when
-the user has authorized file changes. Update it after every answer and phase
-transition. Never lose the original goal when the conversation becomes long.
+Update it after every answer, artifact, delegation, finding, fix round, and
+station transition. After context loss, trust the ledger, files, and Git
+history over conversational memory.
 
-## Walk the decision tree
+## Choose a service style
 
-Treat every unresolved decision as a node. A node becomes ready only when its
-prerequisites are settled.
+Service style controls question delivery; heat controls repetition.
 
-For each ready node:
+- `single-skewer` — default. Serve one decision at a time.
+- `frontier-buffet` — only when explicitly requested. Serve every currently
+  unblocked decision in one numbered round, then recompute the frontier after
+  the answers.
+- `chef-decides` is not a real service style. If the user says "whatever,"
+  present the house recommendation but still obtain confirmation.
 
-1. Look up any discoverable facts first.
-2. State the decision and why it matters.
-3. Give the recommended answer.
-4. Ask exactly one question.
-5. Wait for the answer.
-6. Record the answer, rationale, rejected alternatives, and newly opened
-   branches in the ledger.
+Facts may be investigated concurrently at either style. User decisions remain
+ordered by dependency.
 
-Do not repeat a question verbatim merely to consume time. Re-grill a settled
-decision only when:
+## Run the twelve-station tasting menu
 
-- new evidence contradicts it;
-- a downstream answer changes its assumptions;
-- the selected heat requires a new lens;
-- an artifact implements it ambiguously; or
-- the user explicitly requests another pass.
+### 1. Seat the party — reconnaissance
 
-When re-grilling, name the new lens and the reason the previous answer is no
-longer sufficient.
+Inspect the project, constraints, history, tests, available tools, and current
+Git state. Separate facts from decisions. Detect whether the request is one
+dish or an entire food court.
 
-If there is genuinely nothing new to ask, do not fabricate a risk. Rotate the
-same decision through the next required lens, celebrate that it survived, and
-advance the ledger. Super Grill is performative redundancy, not misinformation.
+Gate: enough evidence exists to ask sharp questions.
 
-## Run the cooking line
+### 2. Menu inquisition — shared understanding
 
-### 1. Mise en place — reconnaissance
+Build a dependency-aware decision tree. Grill purpose, users, success,
+non-goals, scope, failure cost, language, and hidden assumptions using
+[references/menu-inquisition.md](references/menu-inquisition.md).
 
-- Restate the original goal and selected heat.
-- Inspect relevant files, documentation, recent changes, tests, constraints,
-  and available tools.
-- Separate discoverable facts from human decisions.
-- Assess scope. If the request contains independent subsystems, propose a
-  sequence of smaller grill cycles.
-- Initialize the ledger and question frontier.
+Gate: the user confirms shared understanding and no ready branch is silently
+assumed.
 
-Gate: enough evidence exists to ask sharp questions rather than generic ones.
+### 3. Flight of competing sauces — alternatives
 
-Kitchen line: "The mise is placed. The en is questionable."
+Offer two or three viable approaches. Lead with a recommendation. Make the
+strongest rejected option genuinely tempting, then record exactly why it lost.
 
-### 2. Seasoning — intent grill
+Gate: one approach wins a fair sauce trial.
 
-Grill purpose, users, success criteria, non-goals, constraints, reversibility,
-and the cost of failure. Follow the lens order for the selected heat.
+### 4. Architectural dry rub — sectional design
 
-Gate: the user confirms the goal, boundaries, and success criteria.
+Present architecture, responsibilities, interfaces, data flow, errors,
+security, tests, operations, and rollback in sections scaled to complexity.
+Grill each section before proceeding.
 
-Kitchen line: "The request is now marinating in its own assumptions."
+Gate: the user approves every section.
 
-### 3. Sear — alternatives grill
+### 5. Recipe deposition — written specification
 
-- Propose two or three viable approaches.
-- Lead with a recommendation and concrete trade-offs.
-- Grill the strongest alternative, not a straw man.
-- Record why each rejected approach loses.
+Write the approved design, cross-examine it for ambiguity, contradictions,
+placeholder language, scope drift, and vocabulary crimes. Host an imaginary
+food-poisoning banquet to expose failure and recovery gaps, then obtain a
+separate written-artifact approval. Follow
+[references/recipe-deposition.md](references/recipe-deposition.md).
 
-Gate: one approach is chosen deliberately.
+Gate: the conversation and written recipe agree under oath.
 
-Kitchen line: "We have seared the alternatives. One remains legally edible."
+### 6. Skewer bureaucracy — implementation plan
 
-### 4. Low and slow — design grill
+Map files and interfaces, then split work into tiny testable tasks with exact
+steps, commands, expected evidence, and rollback. Cross-examine the plan
+against every requirement. For authorized multi-session work, convert skewers
+into catering tickets with explicit blocking edges.
 
-Present the design in sections appropriate to its complexity. Cover structure,
-interfaces, data flow, errors, tests, operations, and rollback where relevant.
-After each section, run the selected heat's design passes one question at a
-time and revise before continuing.
+Gate: the user approves the written plan and selects a cooking route.
 
-For repository work, write the approved design to
-`docs/super-grill/YYYY-MM-DD-<topic>/spec.md`.
+### 7. Kitchen quarantine — isolated workspace
 
-Gate: every design section and then the written spec receive explicit approval.
+Detect existing isolation before creating anything. When authorized and
+supported, prepare an isolated workspace, install project dependencies, and
+run a clean baseline. Never start a feast on a mysteriously dirty cutting
+board.
 
-Kitchen line: "Low and slow: the architecture has developed a bark."
+Gate: workspace, branch, baseline, and pre-existing failures are known.
 
-### 5. Skewer — implementation-plan grill
+### 8. Sous-chef conveyor belt — implementation
 
-Create a plan whose tasks are independently testable. Name exact files,
-interfaces, verification commands, expected evidence, and safe rollback.
-Prefer small vertical slices and test-first steps.
+Choose the approved route:
 
-Grill:
+- **Brigade route:** dispatch a fresh implementer for each task, then a
+  separate inspector. The coordinator owns context and gates.
+- **Lonely chef route:** execute the plan inline with explicit task
+  checkpoints when delegation is unavailable or declined.
 
-- coverage of every approved requirement;
-- ordering and dependencies;
-- placeholders and vague verbs;
-- interface consistency;
-- failure recovery;
-- which task could invalidate the rest of the plan.
+Use [references/kitchen-industrial-complex.md](references/kitchen-industrial-complex.md).
+For every task, enforce **Raw → Sizzle → Rest** from
+[references/food-safety-theater.md](references/food-safety-theater.md).
 
-For repository work, save the approved plan beside the spec as `plan.md`.
+Gate: each task has fresh test evidence and an independent inspection.
 
-Gate: the user approves the written plan after the required re-grill passes.
+### 9. Smoke autopsy — debugging
 
-Kitchen line: "Every task is now small enough to fit on a skewer and large
-enough to require governance."
+When anything fails unexpectedly, stop speculative seasoning. Reproduce,
+gather evidence, trace the first bad state, compare working examples, form one
+hypothesis, and test it minimally. Three failed fixes trigger an architectural
+inquest.
 
-### 6. Smoke test — pre-mortem
+Gate: the root cause, not merely the symptom, is addressed.
 
-Assume the work failed spectacularly. Ask what most likely caused the failure,
-how it would be detected, and how recovery would work. Update the design and
-plan if the answers expose a gap.
+### 10. Health Inspector Carousel — adversarial review
 
-Gate: material pre-mortem findings are resolved or explicitly accepted.
+Run separate inspections for recipe compliance and kitchen quality. Verify
+feedback against repository reality; neither obey nor reject it
+performatively. Fix material findings, re-inspect only the amended scope, and
+record deferred trivia.
 
-Kitchen line: "We imagined the outage so vividly that it filed an incident
-report."
+Gate: no unresolved load-bearing finding remains.
 
-### 7. Cook — implementation
+### 11. Thermometer courtroom — final verification
 
-For each planned task:
+For every success claim: name the proving command, run it fresh and completely,
+read its output and exit status, compare it with the claim, and only then make
+the claim. Agent confidence is inadmissible evidence.
 
-1. Confirm the task's assumptions still match the repository.
-2. Write or identify a failing test or another falsifiable check.
-3. Observe the expected failure.
-4. Implement the smallest change that satisfies the task.
-5. Run focused verification and then the proportionate broader suite.
-6. Inspect the diff against the task and approved spec.
-7. Apply the selected heat's post-task re-grill.
-8. Update the ledger before moving on.
+Gate: the original order, written artifacts, implementation, and fresh evidence
+tell the same story.
 
-Never call work complete because code exists or another agent reports success.
+### 12. Closing-time tribunal — branch disposition
 
-Gate: fresh evidence proves the task, and required review findings are fixed.
+Verify again, detect the workspace arrangement, and present only authorized,
+environment-valid choices: merge locally, push and open a review request, or
+keep the branch parked. Destructive disposal requires explicit confirmation.
 
-Kitchen line: "The code has reached an internal temperature of approximately
-green."
+Gate: the user chooses what happens to the branch and leftovers.
 
-### 8. Taste test — adversarial review
+## Apply the heat
 
-Review the whole result from distinct perspectives: spec compliance, code
-quality, tests, security and privacy where relevant, operations, rollback, and
-future maintenance. Do not let one reviewer impersonate several independent
-passes; separate the lenses and findings.
+Heat determines how many times artifacts, tasks, and findings return to earlier
+stations. Follow the exact matrix and lens coverage in
+[references/grill-levels.md](references/grill-levels.md).
 
-Re-open any decision whose implementation differs from its recorded rationale.
+When a later answer changes an earlier assumption, return to the earliest
+affected station. Call this **thermal recirculation**, never "going backward."
 
-Gate: critical and important findings are fixed; accepted residual risks are
-listed explicitly.
+If no new information emerges, do not invent a risk. Record the majestic
+absence of change, award the applicable achievement, and run the next required
+lens.
 
-Kitchen line: "The tasting panel has found notes of scope creep and oak."
+## Keep the joke structurally sound
 
-### 9. Plate — final verification
+Play every ceremony straight. Use institutional language for microscopic
+choices. Give agents unnecessarily specific culinary job titles. Keep real
+questions, blockers, commands, findings, and permissions unambiguous.
 
-- Re-read the original goal and every settled decision.
-- Run fresh end-to-end verification appropriate to the work.
-- Check the artifacts against the implementation.
-- Summarize evidence, changes, rejected alternatives, and residual risks.
-- Ask the final heat-specific release question.
+Mock process theater, never the user or their idea.
 
-Only say the food is ready when the evidence supports it and the user confirms
-the required gate. Otherwise return the affected item to the earliest relevant
-phase.
-
-Kitchen line: "Plating complete. The garnish has its own implementation plan."
-
-## Make the joke land
-
-Play the workflow completely straight. Use grand institutional language for
-tiny decisions, issue solemn culinary status reports, and unlock achievements
-without explaining that they are jokes. Keep actual questions and blockers
-understandable so the user can participate in their own bureaucratic barbecue.
-
-Never mock the user, their idea, or a changed answer. The target is process
-theater: planning systems, agent rituals, and the universal temptation to turn
-"rename button" into a transformation program.
-
-If the ceremony stops producing information, announce:
+If the ceremony becomes informationally sterile, announce:
 
 > No new information detected. The grill is now converting tokens directly
 > into ambience.
 
-Continue the required theatrical passes unless the user lowers the heat or
-says `take it off the grill`.
+Continue required passes until the heat is lowered or the exit phrase is used.
