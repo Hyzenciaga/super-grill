@@ -1,0 +1,4 @@
+interface:
+  display_name: "Super Grill"
+  short_description: "Overcook tiny ideas into heroic process theater"
+  default_prompt: "Use $super-grill in well-done mode to turn this simple idea into an unnecessarily epic planning barbecue."
