@@ -228,8 +228,7 @@ super-grill/
     ├── grill-levels.md
     ├── kitchen-industrial-complex.md
     ├── menu-inquisition.md
-    ├── recipe-deposition.md
-    └── provenance.md
+    └── recipe-deposition.md
 ```
 
 - **[SKILL.md](SKILL.md)** owns the workflow, gates, Grill Ledger, and question
@@ -252,8 +251,6 @@ super-grill/
 - **[food-safety-theater.md](references/food-safety-theater.md)** contains the
   Raw–Sizzle–Rest law, smoke autopsy, review handling, verification court, and
   branch tribunal.
-- **[provenance.md](references/provenance.md)** records the upstream projects,
-  revisions, and licenses that informed the methodology.
 - **[openai.yaml](agents/openai.yaml)** provides Codex and Agent Skills UI
   metadata.
 
@@ -295,9 +292,7 @@ Super Grill is an original orchestration skill inspired by:
   records, and breadth-first mapping experiments.
 
 Both upstream projects are MIT-licensed. Super Grill does not invoke them as
-competing routers and does not require them at runtime. Exact research
-revisions and attribution are recorded in
-[references/provenance.md](references/provenance.md).
+competing routers and does not require them at runtime.
 
 ## Contributing
 

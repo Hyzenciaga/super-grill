@@ -37,8 +37,6 @@ Before starting:
   and [references/food-safety-theater.md](references/food-safety-theater.md).
 - For debugging or review-only work, read
   [references/food-safety-theater.md](references/food-safety-theater.md).
-- Read [references/provenance.md](references/provenance.md) only for
-  attribution, licensing, or upstream comparison.
 
 ## Take the Chef's Oath
 
