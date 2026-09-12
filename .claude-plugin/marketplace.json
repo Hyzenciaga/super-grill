@@ -10,7 +10,7 @@
     {
       "name": "super-grill",
       "source": "./",
-      "description": "Turn tiny tasks into fully staffed, repeatedly inspected planning barbecues.",
+      "description": "A complete grilling workflow with decision traceability, blind tastings, disposable experiments, and review evidence.",
       "category": "development",
       "keywords": [
         "skills",

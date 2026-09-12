@@ -1,0 +1,8 @@
+test_three_items (test_cart.CartTests.test_three_items) ... ok
+test_zero_price (test_cart.CartTests.test_zero_price) ... ok
+test_zero_quantity (test_cart.CartTests.test_zero_quantity) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+OK

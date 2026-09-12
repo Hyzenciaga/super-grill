@@ -1,0 +1,50 @@
+{
+  "fixture": {
+    "count": 3,
+    "ids": [
+      "a",
+      "b",
+      "c"
+    ],
+    "unique_id_count": 3
+  },
+  "baseline_once": {
+    "count": 3,
+    "ids": [
+      "a",
+      "b",
+      "c"
+    ],
+    "unique_id_count": 3
+  },
+  "baseline_twice": {
+    "count": 6,
+    "ids": [
+      "a",
+      "b",
+      "c",
+      "a",
+      "b",
+      "c"
+    ],
+    "unique_id_count": 3
+  },
+  "candidate_once": {
+    "count": 3,
+    "ids": [
+      "a",
+      "b",
+      "c"
+    ],
+    "unique_id_count": 3
+  },
+  "candidate_twice": {
+    "count": 3,
+    "ids": [
+      "a",
+      "b",
+      "c"
+    ],
+    "unique_id_count": 3
+  }
+}

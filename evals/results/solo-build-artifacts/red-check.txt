@@ -1,0 +1,35 @@
+test_three_items (test_cart.CartTests.test_three_items) ... FAIL
+test_zero_price (test_cart.CartTests.test_zero_price) ... FAIL
+test_zero_quantity (test_cart.CartTests.test_zero_quantity) ... FAIL
+
+======================================================================
+FAIL: test_three_items (test_cart.CartTests.test_three_items)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/sx/xjl2wfwd6tvgprplsck9p1f80000gn/T/super-grill-red-cscebska/test_cart.py", line 6, in test_three_items
+    self.assertEqual(subtotal(120, 3), 360)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 123 != 360
+
+======================================================================
+FAIL: test_zero_price (test_cart.CartTests.test_zero_price)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/sx/xjl2wfwd6tvgprplsck9p1f80000gn/T/super-grill-red-cscebska/test_cart.py", line 12, in test_zero_price
+    self.assertEqual(subtotal(0, 3), 0)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: 3 != 0
+
+======================================================================
+FAIL: test_zero_quantity (test_cart.CartTests.test_zero_quantity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/sx/xjl2wfwd6tvgprplsck9p1f80000gn/T/super-grill-red-cscebska/test_cart.py", line 9, in test_zero_quantity
+    self.assertEqual(subtotal(120, 0), 0)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 120 != 0
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+FAILED (failures=3)

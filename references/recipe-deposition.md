@@ -1,7 +1,8 @@
 # Recipe Deposition
 
 Use this protocol for sectional design, the written specification, and the
-implementation plan.
+implementation plan. Honor route and delegated decision scope from the main
+skill. A gate already satisfied by the user's instruction stays satisfied.
 
 ## Table of contents
 
@@ -18,8 +19,9 @@ implementation plan.
 ## Architectural dry rub
 
 Start from repository evidence and settled decisions. Present the design in
-sections scaled to complexity. After each section, ask whether it is correct
-and run the heat-required lenses before moving on.
+sections scaled to complexity. Run the heat-required lenses. Ask for approval
+only when the section introduces a material choice outside existing answers or
+delegated authority; otherwise record the rationale and continue.
 
 Cover when relevant:
 
@@ -39,16 +41,22 @@ in the walk-in freezer.
 
 ## Written recipe
 
-For repository work, save the approved design to:
+For an authorized written specification, save the design to:
 
-`docs/super-grill/YYYY-MM-DD-<topic>/spec.md`
+`docs/super-grill/<run-id>/spec.md`
+
+Respect existing project artifact conventions and the user's location. Analysis
+and small bounded work can keep their specification in conversation; no write
+is required merely because the working directory is a repository.
 
 Write it so a cold reader can explain the goal, boundaries, chosen approach,
 interfaces, failure behavior, tests, and non-goals without access to the
 conversation.
 
-Do not advance merely because the conversational design was approved. The
-written artifact receives its own approval after cross-examination.
+Cross-examine the written artifact against the approved conversation. If it
+introduces or changes a material choice outside delegated authority, obtain that
+choice before dependent implementation. Otherwise retain existing authorization;
+do not create an approval loop for an equivalent transcription.
 
 ## Recipe cross-examination
 
@@ -67,8 +75,9 @@ Inspect the written recipe for:
    requirement.
 7. **Dish without a sauce** — an approved requirement has no design coverage.
 
-Fix discovered issues in the artifact, then ask the user to review the file.
-If they request changes, update it and repeat the cross-examination.
+Fix issues within authorized scope and present the artifact. Ask only for
+missing material decisions; otherwise proceed under existing authorization.
+When the user changes a premise, apply [Ingredient Recall](traceability.md).
 
 ## Imaginary food-poisoning banquet
 
@@ -92,10 +101,12 @@ cross-task interface to an exact name and type. Split work where a reviewer
 could accept one unit while rejecting its neighbor. Fold scaffolding,
 configuration, docs, and cleanup into the task whose deliverable needs them.
 
-Every task must:
+For a build requiring a written plan, every task must:
 
 - produce an independently testable vertical slice;
-- carry its own Raw → Sizzle → Rest cycle;
+- define proportionate falsifiable verification; use Raw → Sizzle → Rest for
+  production behavior changes, a direct check for documentation/configuration,
+  and the tasting protocol for experimental work;
 - name exact files;
 - define what it consumes and produces;
 - include runnable verification and expected output;
@@ -109,7 +120,8 @@ Save the plan beside the spec as `plan.md`. Start with:
 ```markdown
 # <Feature> Catering Plan
 
-> Required cooking route: Brigade or Lonely Chef.
+> Execution: Brigade or Lonely Chef.
+> Run ID / Plan ID / Revision: record this plan's identity.
 
 Original order:
 Architecture:
@@ -135,10 +147,10 @@ Interfaces:
 - Consumes: `exactName(type) -> type`
 - Produces: `exactName(type) -> type`
 
-- [ ] Raw: write the failing test with actual test code
+- [ ] Raw: specify the behavioral failing test or relevant alternative check
 - [ ] Prove rawness: run `<exact command>`
       Expected: FAIL for `<specific missing behavior>`
-- [ ] Sizzle: write the smallest implementation with actual code or exact edits
+- [ ] Sizzle: implement the behavior within the named interfaces and constraints
 - [ ] Check temperature: run `<exact command>`
       Expected: PASS with `<specific evidence>`
 - [ ] Rest: improve structure without changing behavior
@@ -146,6 +158,11 @@ Interfaces:
 - [ ] Inspect: compare the diff with this skewer and the recipe
 - [ ] Commit, only if authorized: exact paths and message
 ````
+
+Use exact code when a fragile interface or reproducible task benefits from it;
+otherwise specify behavior, boundaries and acceptance evidence, leaving sound
+implementation choices to the agent. Batch same-shape mechanical edits where
+they form one reviewable slice. Do not force a docs edit through pretend TDD.
 
 Each checkbox is one small action. Do not write:
 
@@ -158,7 +175,7 @@ Each checkbox is one small action. Do not write:
 
 ## Plan cross-examination
 
-Run three passes:
+Check these three aspects in the heat-required examinations:
 
 1. **Coverage deposition:** map every recipe requirement to at least one
    skewer.
@@ -167,8 +184,9 @@ Run three passes:
 3. **Interface lineup:** verify names, signatures, types, files, and values
    agree across tasks.
 
-Apply extra heat passes from `grill-levels.md`. Correct the plan inline, then
-obtain explicit user approval.
+Use the pass count from `grill-levels.md`; these aspects do not add three more
+mandatory passes. Correct the plan within scope, resolve undelegated material
+choices, and execute when already authorized.
 
 ## Catering tickets
 
@@ -188,11 +206,14 @@ merely because the joke suggested it.
 
 ## Cooking-route handoff
 
-After approval, offer:
+When execution is requested, use the authorized and available route. If the
+user has not selected one, choose inline execution unless authorized delegation
+is useful; explain the choice without adding a redundant confirmation. Routes:
 
 1. **Sous-Chef Conveyor Belt** — fresh implementer per skewer, separate
    inspector, fix loops, final whole-kitchen inspection.
 2. **Lonely Chef With Clipboard** — inline execution with the same tests,
    ledger, inspection gates, and stop conditions.
 
-Record the choice. Do not start cooking in the same breath as asking.
+Record the execution choice. An actual unanswered approval request blocks only
+dependent work. A plan-only order ends with the plan; do not start cooking.

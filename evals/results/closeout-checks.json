@@ -1,0 +1,10 @@
+{
+  "source_fingerprints_match": true,
+  "json_files_parsed": 7,
+  "local_links_checked": 57,
+  "historical_fixture_links_skipped": 7,
+  "version": "1.0.0",
+  "behavior_cases": 11,
+  "diff_check_exit": 0,
+  "head": "80eef2405700c7523e1d7657459058dabd87690f"
+}

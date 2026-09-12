@@ -1,7 +1,9 @@
 # Menu Inquisition
 
 Use this protocol whenever intent, terminology, scope, or a decision remains
-unsettled.
+unsettled. Apply the main skill's route, stop and authority rules throughout.
+A clear instruction to stop questioning ends the interview; record unresolved
+choices as uncertainties or make them within explicit delegated authority.
 
 ## Table of contents
 
@@ -26,14 +28,17 @@ For every ready node:
 1. Investigate discoverable facts first.
 2. State the decision and why it matters.
 3. Give the house recommendation and reasoning.
-4. Ask according to the selected service style.
-5. Wait for the answer.
-6. Record the answer, rejected alternatives, rationale, and newly opened
-   branches.
+4. For an undelegated material choice, ask according to the service style and
+   wait. For an already answered choice, reuse the answer. For a delegated
+   choice, record your ruling and rationale without another approval loop.
+5. Do not treat silence as an answer or a recommendation as authorization.
+6. Record the answer/ruling, rejected alternatives, rationale, and newly opened
+   branches; link load-bearing nodes using [traceability.md](traceability.md).
 7. Recompute the frontier.
 
 Never ask a downstream question whose wording assumes an upstream answer.
-Never silently choose a decision merely because the recommendation is obvious.
+An obvious recommendation alone does not delegate a decision. Explicit user
+delegation does; preserve its scope across stations.
 
 ## Service styles
 
@@ -58,23 +63,27 @@ not select it implicitly.
 Facts are kitchen labor, not diner homework.
 
 - Search files, history, documentation, and tools before asking.
-- When multiple fact questions are independent and delegation exists, dispatch
+- When multiple fact questions are independent and delegation is available and
+  authorized, dispatch
   focused scouts concurrently.
-- Give each scout one domain, the exact evidence needed, constraints, and a
-  report-file path.
+- Give each scout one domain, the exact evidence needed, constraints, and an
+  authorized report location or in-conversation return contract. Without scouts,
+  investigate directly; do not make tool availability a decision blocker.
 - A running scout blocks only the dependent branch; continue grilling other
   ready branches.
 - Inspect scout evidence yourself. A scout report is testimony, not proof.
 
 ## Wheeled visual-aid cart
 
-Do not offer visual ceremony at the start. The first time a real decision would
-be materially clearer as a mockup, diagram, layout comparison, or flow, offer a
-visual companion in its own message and wait.
+Use a mockup, diagram, layout comparison, or flow when it makes a real decision
+clearer. Use the host's available visualization tools within the existing order;
+a visual already requested does not need another invitation. Ask only when a
+new service, cost, or action genuinely needs authorization. Respect a declined
+visual mode.
 
-If accepted, use visuals only for genuinely visual questions. Requirements,
-scope, terminology, and conceptual trade-offs remain text. If declined, park
-the cart and do not wheel it back unless the user asks.
+When discussion needs an observable test, read [taste-test.md](taste-test.md).
+A static illustration cannot establish that logic, persistence, or performance
+works. Mark predicted behavior separately from an observed interaction.
 
 The cart is a tool, not a parallel restaurant. Its output returns to the same
 decision tree and approval gates.
@@ -86,7 +95,8 @@ parody records inside the current Super Grill artifact directory.
 
 ### Vocabulary on probation
 
-Maintain `vocabulary.md` when project-specific terms matter:
+Reuse the project's existing glossary/domain context when present. Otherwise
+maintain `vocabulary.md` when project-specific terms matter:
 
 - Challenge overloaded or conflicting terms immediately.
 - Compare user language with existing docs and code.
@@ -120,7 +130,9 @@ the restaurant to use anyone else's menu terminology.
 
 ## Artifact rotisserie
 
-When the user is grilling a named artifact rather than a new idea:
+When the user is grilling a named artifact rather than a new idea, distinguish
+review from authorized editing. A review-only order produces findings without
+writing a ledger or modifying the artifact. For authorized revisions:
 
 1. Read the artifact completely before asking.
 2. Re-read it from disk before every edit because the user may have changed it.
@@ -147,9 +159,10 @@ question is already sharp.
 7. Move anything beyond the destination into `Out of kitchen`, not back into
    fog.
 
-Resolve at most one load-bearing decision per focused session unless all
-remaining work is independent research. The output is a clearer route, not
-premature implementation.
+Keep large efforts centered on the current destination. Resolve its ready
+decisions within the user's chosen service and authority; do not impose an
+arbitrary one-decision-per-session stop. The output is a clearer route; a map
+or a planning-only request does not authorize implementation.
 
 ## Reverse searing
 
@@ -159,7 +172,7 @@ Re-open a settled node only when:
 - a downstream answer changes its prerequisites;
 - the written artifact implements it ambiguously;
 - code and vocabulary disagree;
-- the selected heat requires another lens; or
+- a heat-required lens reveals a concrete new counterexample; or
 - the user asks for another pass.
 
 Name the new lens and why the earlier answer is no longer sufficient. Never
@@ -173,6 +186,8 @@ The inquisition ends only when:
 - every remaining fog item is explicitly deferred or out of scope;
 - artifacts reflect settled decisions;
 - no important term is still overloaded; and
-- the user confirms shared understanding.
+- shared understanding is confirmed, already established by the request, or
+  resolved within explicit delegated authority.
 
-Do not act merely because the agent feels ready. The diner signs the menu.
+Deliver the route's requested result. Unresolved decisions outside delegated
+authority remain explicit uncertainties; they never silently authorize a build.

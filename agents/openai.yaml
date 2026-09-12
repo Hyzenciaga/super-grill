@@ -1,4 +1,4 @@
 interface:
   display_name: "Super Grill"
-  short_description: "Turn tiny tasks into a sub-agent barbecue epic"
-  default_prompt: "Use $super-grill in charcoal mode to turn this tiny change into a fully staffed, repeatedly inspected planning barbecue."
+  short_description: "Grill ideas, prototypes, and code with evidence"
+  default_prompt: "Use $super-grill in well-done mode to question this request from idea to evidence, with full culinary ceremony."

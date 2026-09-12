@@ -1,87 +1,84 @@
 # Grill Levels
 
-Select the heat once at the start. Increase or decrease it only after the user
-agrees. Heat controls repetition; service style controls whether decision
-questions arrive one skewer or one frontier platter at a time.
+Heat controls repetition and analytical lenses. Route controls the deliverable;
+service controls question delivery; authority controls who makes a decision.
+Changing one does not silently change the others. Honor an explicit heat change
+immediately; do not ask the user to confirm their own instruction.
 
 ## Mode matrix
 
-| Heat | Intended experience | Required passes | Implementation gates | Exit behavior |
-| --- | --- | --- | --- | --- |
-| `medium-rare` | You may still remember why you opened the terminal | One pass through all twelve stations; one cross-examination per artifact | One Raw–Sizzle–Rest cycle and one independent inspection per task | Stop when all gates pass or the user says `take it off the grill` |
-| `well-done` | Default; project managers begin to feel seen | Two passes over every written artifact: constructive chef, then skeptical diner | Re-grill every task after verification; require recipe and texture verdicts | Replay the original order and ask whether any decision remains implicit |
-| `charcoal` | Requirements and soot become indistinguishable | Three passes: constructive chef, skeptical diner, fire marshal; all twelve lenses | Prefer the Brigade route; grill before and after every task; separate recipe, texture, and operational inspections | Require two consecutive whole-menu passes with no material new issue |
-| `eternal-flame` | Continue until the heat death of the universe or the exit phrase, whichever passes review first | Run Charcoal, then restart at Seat the Party whenever any artifact, decision, or implementation changes | Re-open every affected branch, re-brief the brigade, and re-inspect all downstream skewers | Continue until the exact phrase `take it off the grill`; every ten questions summarize and advertise the exit |
+| Heat | Artifact examinations | Task examinations | Terminal behavior |
+| --- | --- | --- | --- |
+| `medium-rare` | One coherent pass through applicable stations and artifacts | Relevant verification plus recipe/quality review, with honest solo fallback | Deliver when the route's result is supported |
+| `well-done` | Two passes: constructive chef, skeptical diner | Reconcile each completed slice against its requirements; two review verdicts | Replay the original order, resolve material gaps, then deliver |
+| `charcoal` | Three distinct passes: constructive chef, skeptical diner, fire marshal; all applicable lenses | Examine before/after each task; include operational evidence where relevant | Require two consecutive whole-order passes with no material new issue |
+| `eternal-flame` | Charcoal; reopen affected examinations when evidence or decisions change | Same evidence standards, never invented work | Continue while there is new authorized material; when none remains, summarize and wait for input |
 
-`eternal-flame` is permission to be absurd, not permission to fabricate.
-Never repeat an unchanged question. If the frontier is empty, replay the
-original order against the vocabulary, decision cards, recipe, plan, code,
-tests, agent reports, and branch state. If that also produces nothing, report
-that the grill is converting tokens into ambience and wait for either a new
-branch or the exit phrase.
+`well-done` and `single-skewer` are defaults. Never infer eternal flame from
+“thorough”, “careful”, or an important task. It must be explicitly requested.
+Every clear stop/cancel/pause or handoff instruction is valid in every language.
+The signature `take it off the grill` unlocks a joke; no exact phrase is required.
+Do not schedule wakeups or keep calling tools to simulate an eternal fire.
+
+A pass is one recorded examination against a named lens, with findings or an
+explicit no-finding result. A changed artifact invalidates affected previous
+verdicts. Distinct lenses can examine the same artifact version; do not rerun
+identical commands merely to manufacture a second pass. Fix-loop rounds address
+findings and are not mandatory heat passes. Count them separately.
 
 ## Lens order
 
-Use only the required prefix for the selected heat:
+1. **Intent:** Who needs this, what changes, what proves success?
+2. **Scope:** What is in, out, deferred?
+3. **Assumptions:** Which premise carries the result, what would falsify it?
+4. **Alternatives:** Why does the strongest other approach lose?
+5. **Boundaries:** Are concepts, ownership and interfaces clear?
+6. **Data:** What is created, transformed, retained or deleted?
+7. **Failure:** How does a dependency fail and how can the user recover?
+8. **Security/privacy:** What actual new authority or sensitive surface exists?
+9. **Testing:** What observation could disprove the behavior claim?
+10. **Operations:** How is the result run, observed, supported and rolled back?
+11. **Reversibility:** Which choice is expensive to reverse?
+12. **Future maintainer:** What will be mysterious later?
 
-1. **Intent:** Who needs this, what changes for them, and what proves success?
-2. **Scope:** What is explicitly in, out, or deferred?
-3. **Assumptions:** Which belief carries the most weight and how can it fail?
-4. **Alternatives:** What is the strongest rejected approach and why does it
-   lose?
-5. **Boundaries:** Are components, ownership, and interfaces unambiguous?
-6. **Data:** What is created, transformed, retained, migrated, or deleted?
-7. **Failure:** How does each dependency fail and what is the recovery path?
-8. **Security and privacy:** What new authority or sensitive surface appears?
-9. **Testing:** What observation would falsify the claimed behavior?
-10. **Operations:** How is this deployed, observed, supported, and rolled back?
-11. **Reversibility:** Which decision is expensive to undo?
-12. **Future maintainer:** What will look mysterious three months from now?
-
-Heat coverage:
-
-- `medium-rare`: lenses 1–5, plus any obviously relevant later lens.
-- `well-done`: lenses 1–10 for implementation work.
-- `charcoal`: all twelve lenses.
-- `eternal-flame`: all twelve, then replay them against cross-artifact
-  contradictions, new evidence, and the possibility that completion itself was
-  under-specified.
+Medium-rare covers 1–5 plus other relevant lenses. Well-done covers applicable
+1–10. Charcoal and eternal flame consider all twelve and record inapplicable
+ones briefly. No database, deployment or security subsystem is invented because
+its lens appears on the menu. Analysis can examine a proposed failure without
+building the system that fails.
 
 ## Pass personalities
 
-Use these as analytical stances, not fake people:
+- Constructive chef makes the approach coherent.
+- Skeptical diner checks counterexamples and stronger alternatives.
+- Fire marshal examines plausible failures and recovery.
+- Future maintainer is an optional additional perspective where useful.
 
-- **Constructive chef:** Make the chosen approach coherent and buildable.
-- **Skeptical diner:** Search for ambiguity, unsupported claims, and stronger
-  alternatives.
-- **Fire marshal:** Assume failure, abuse, operational surprise, and rollback.
-- **Future maintainer:** Check names, rationale, interfaces, and long-term
-  comprehensibility.
+These are analytical stances, never fictional people or proof of independent
+review. Actual blind tasting uses separate contexts when available; see
+[blind-tasting.md](blind-tasting.md). Sequential perspectives are labeled honestly.
 
-For `charcoal`, never let one pass impersonate all four personalities. For
-`eternal-flame`, rotate the personalities through the same evidence until the
-user invokes the health inspector.
+## Empty-frontier service
 
-## Final release questions
+Never re-ask an unchanged settled question solely to reach a count. A later lens
+may challenge its support: name the new scenario or evidence. When no new issue
+exists, record the absence, serve the next required examination, then finish the
+finite route. For eternal flame, summarize settled/open items and wait; every ten
+actual decision questions remind the user they can stop in ordinary language.
 
-- `medium-rare`: "Does the evidence meet the approved success criteria?"
-- `well-done`: "After replaying the original goal, is any decision still
-  implicit?"
-- `charcoal`: "Have two consecutive full passes produced no material new
-  issue?"
-- `eternal-flame`: "Say `take it off the grill` when you want the final handoff;
-  otherwise name the next branch to burn."
+The final goal replay is a check, not a mandatory question. With delegated choices,
+record the ruling and proceed. Without delegation, ask only if a material choice
+remains unresolved.
 
-## Temperature conversions
+## Ceremonial units
 
-These are ceremonial units with no operational meaning:
+- Clarification round: 15 Grill Degrees.
+- Rejected alternative: 1 Skewer.
+- Written artifact: 0.5 Bureaucratic Briquettes.
+- Unchanged review: 1 Certified Nothingburger.
+- Independent implementer/inspector: 1 Culinary Separation of Duties.
+- Five-round fix loop: 1 Alarmingly Persistent Skewer.
+- Complete frontier: 1 All-You-Can-Answer Buffet.
+- Charcoal completion: Full Stack Barbecue.
 
-- One clarification round = 15 Grill Degrees.
-- One rejected alternative = 1 Skewer.
-- One written artifact = 0.5 Bureaucratic Briquettes.
-- One unchanged re-review = 1 Certified Nothingburger.
-- One implementer plus one inspector = 1 Culinary Separation of Duties.
-- One five-round fix loop = 1 Alarmingly Persistent Skewer.
-- One complete decision frontier = 1 All-You-Can-Answer Buffet.
-- A completed `charcoal` cycle qualifies as a Full Stack Barbecue.
-- `eternal-flame` has no numeric temperature because legal advised against it.
+These numbers measure the joke, not quality, safety or progress.

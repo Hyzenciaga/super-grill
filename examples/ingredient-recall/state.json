@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "run_id": "demo-recall",
+  "plan_id": "demo-plan",
+  "nodes": {
+    "G-01": {
+      "id": "G-01",
+      "kind": "goal",
+      "summary": "Edit a shopping list offline",
+      "depends_on": [],
+      "status": "settled",
+      "revision": 1
+    },
+    "A-01": {
+      "id": "A-01",
+      "kind": "assumption",
+      "summary": "One device edits each list",
+      "depends_on": [],
+      "status": "accepted",
+      "revision": 1
+    },
+    "D-01": {
+      "id": "D-01",
+      "kind": "decision",
+      "summary": "Overwrite the latest saved list",
+      "depends_on": [
+        "G-01",
+        "A-01"
+      ],
+      "status": "settled",
+      "revision": 1
+    },
+    "R-01": {
+      "id": "R-01",
+      "kind": "requirement",
+      "summary": "Persist the whole list locally",
+      "depends_on": [
+        "D-01"
+      ],
+      "status": "settled",
+      "revision": 1
+    },
+    "T-01": {
+      "id": "T-01",
+      "kind": "task",
+      "summary": "Implement local saving",
+      "depends_on": [
+        "R-01"
+      ],
+      "status": "complete",
+      "revision": 1
+    },
+    "E-01": {
+      "id": "E-01",
+      "kind": "evidence",
+      "summary": "Illustrative single-device restart test",
+      "depends_on": [
+        "T-01",
+        "A-01"
+      ],
+      "status": "accepted",
+      "revision": 1
+    },
+    "T-02": {
+      "id": "T-02",
+      "kind": "task",
+      "summary": "Use readable typography",
+      "depends_on": [
+        "G-01"
+      ],
+      "status": "complete",
+      "revision": 1
+    }
+  },
+  "example_only": true
+}

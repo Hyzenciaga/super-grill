@@ -1,196 +1,199 @@
 # Kitchen Industrial Complex
 
-Use this protocol for workspace isolation, delegation, parallel scouting,
-task execution, and persistent coordination.
-
-## Table of contents
-
-- Kitchen quarantine
-- Brigade roles
-- Task brief
-- Sous-chef conveyor belt
-- Lonely chef with clipboard
-- Inspector carousel
-- Five-alarm fix loop
-- Agent closing-time violations
-- Parallel buffet
-- Final inspection
+Use for authorized workspace changes, delegation, task execution, review evidence
+and recovery. Apply the main skill's route, authority and stop rules throughout.
+Read [traceability.md](traceability.md) when creating or resuming a durable run.
 
 ## Kitchen quarantine
 
-Before changing code:
+Before code changes, inspect repository instructions, Git status/current branch,
+existing worktree isolation, setup commands and the relevant test baseline.
+Preserve pre-existing edits, staged changes and untracked files. Record existing
+failures separately from regressions; investigate blockers that affect this task,
+continue unaffected work, and ask only for missing material scope/authority.
 
-1. Inspect Git status, current branch, repository instructions, and existing
-   isolation.
-2. Do not manufacture another worktree when the harness already owns an
-   isolated workspace.
-3. If isolation is desired but absent, obtain any required consent and prefer
-   the host's native workspace mechanism.
-4. For a project-local fallback, use an ignored worktree directory and verify
-   it is ignored before creation.
-5. Install dependencies using the project's established method.
-6. Run the relevant baseline suite before implementation.
-7. Record pre-existing failures and ask whether to investigate or proceed.
-
-Never begin on `main` or `master` without explicit authorization. A dirty or
-failing baseline is not rustic charm; it is contaminated evidence.
+Do not manufacture a worktree if the host already isolates the work. When needed,
+use the host's native mechanism or a verified ignored project-local directory.
+Respect authorized branch scope; do not commit on a protected/shared branch or
+clean up someone else's checkout. Install dependencies only when required by the
+order using the established project method. A research conversation needs none
+of these side effects merely to fill a station.
 
 ## Brigade roles
 
-Give each agent one theatrical but precise job:
+| Role | Actual responsibility |
+| --- | --- |
+| Pantry Scout | Investigate one fact domain without editing |
+| Skewer Mechanic | Implement a scoped task, test and self-review |
+| Recipe Compliance Officer | Compare requested and delivered behavior |
+| Texture Inspector | Review correctness, clarity, tests and maintainability |
+| Smoke Coroner | Trace one concrete failure |
+| Executive Health Inspector | Review cross-task behavior and the whole requested change |
 
-- **Pantry Scout:** gather facts only; do not edit.
-- **Skewer Mechanic:** implement exactly one planned task.
-- **Recipe Compliance Officer:** compare a task with its approved requirements.
-- **Texture Inspector:** review code quality, tests, maintainability, and
-  accidental cleverness.
-- **Smoke Coroner:** investigate one failure domain and report root cause.
-- **Executive Health Inspector:** review the entire branch at the end.
+Subagents require host support and authorization. Match capability to judgment
+needed; follow an explicit requested model when available, and report unsupported
+model/tool limitations honestly. The coordinator owns delegation and gates. A
+worker does not recursively recruit helpers or reviewers unless that delegation
+was explicitly included in its brief. Do not create user-owned app tasks merely
+as a substitute for internal agents.
 
-An implementer never certifies its own task. Self-review is required but does
-not replace inspection.
+An implementer self-reviews but never certifies an independent review of its own
+work. One independent inspector may issue both recipe and quality verdicts. With
+no independent reviewer available/authorized, use the solo fallback below.
 
-Choose capability proportional to the role when the platform supports model
-selection. Use stronger judgment for architecture, integration, stuck fix
-loops, and whole-branch review. Record the choice without pretending token
-price is a food-safety metric.
+## Task brief and reports
 
-## Task brief
+For each independently reviewable slice, record a task ID, run/plan identity and
+current snapshot before dispatch. Use fresh task context: the brief contains only
+relevant requirements, global constraints, interfaces, earlier decisions it needs,
+allowed paths, pre-existing changes, evidence requirements and report contract.
+Do not paste the full session or expose the coordinator's preferred review verdict.
+Give artifacts as file pointers when available; read-only tasks may return their
+report in conversation rather than write files.
 
-Before dispatching a Skewer Mechanic:
+Required status vocabulary:
 
-1. Record the task's BASE revision.
-2. Extract only that task, restaurant-wide constraints, required interfaces,
-   and directly relevant earlier decisions into a unique brief file.
-3. Name the report file and specify the report contract.
-4. Include where the task fits, exact allowed scope, verification requirements,
-   and known parked findings.
-5. Do not paste the whole conversation or every previous task.
+- `PLATED`: requested slice implemented, checked and self-reviewed.
+- `PLATED_WITH_SMOKE`: complete with explicit concerns requiring adjudication.
+- `NEEDS_INGREDIENTS`: missing context or prerequisite.
+- `KITCHEN_ON_FIRE`: blocked after reasonable attempts.
 
-Required report statuses:
+Reports contain task/run identity, changed files and actual snapshot, commits if
+any, tests and observed outcomes, self-review findings, limits and open concerns.
+A report status is testimony, never the coordinator's completion evidence.
 
-- `PLATED` — complete, tested, self-reviewed.
-- `PLATED_WITH_SMOKE` — complete with concerns.
-- `NEEDS_INGREDIENTS` — missing context or dependency.
-- `KITCHEN_ON_FIRE` — blocked despite reasonable attempts.
+## Review evidence, including uncommitted work
 
-The report must name changed files, commits if any, tests run, observed output,
-self-review findings, and concerns. Store the detailed report in a file; return
-only a compact status to the coordinator.
+A BASE-to-HEAD diff covers only commits. If committing was not requested, the task
+can leave HEAD unchanged while changing every relevant file. Capture relevant
+paths before execution, then compare with their actual contents after execution:
+committed, index/staged, working-tree and untracked states all matter.
+
+Optional standard-library helpers, run from the installed skill directory:
+
+```bash
+python3 scripts/review_evidence.py capture --repo /path/to/repo --output /tmp/grill-before --path src --path tests
+python3 scripts/review_evidence.py package --repo /path/to/repo --baseline /tmp/grill-before --output /tmp/grill-review --path src --path tests
+python3 scripts/review_evidence.py verify --repo /path/to/repo --package /tmp/grill-review --path src --path tests
+```
+
+A review package contains `task.patch` (captured before versus current content),
+`before-tree/` and `after-tree/`, Git layer patches and `review.json`. Inspect the
+actual task patch and pre-existing-work warnings, not just the Git layer patches.
+The verifier exits 0 for a matching snapshot, 1 for current-state drift, and 2
+for invalid inputs or unusable evidence. A failed verifier is not a clean review.
+
+Use a fresh output location outside the repository. Choose exact task-owned paths;
+never point indiscriminately at a repository containing private data or credentials.
+Pass paths without following symlinks outside the checkout. See `--help` for the
+package drift-verification command. The coordinator inspects package warnings and
+file changes; a hash is a content identity, not correctness or attribution proof.
+
+Without Python, capture the relevant pre-task file contents and `git status`,
+then assemble committed/index/working-tree diffs and explicitly inspect new files.
+For files already dirty, distinguish the earlier content from changes introduced
+during this task. A final diff against Git's base alone cannot do that. If the
+baseline was not captured, mark attribution uncertain rather than inventing it.
+Keep baseline snapshots outside the paths being measured.
+
+If a user or another worker changes a task file during execution, flag overlap
+and reconcile before attribution or overwriting. Verify the review still matches
+the current file snapshot before applying its verdict. A later change invalidates
+a review of that content; retain the old review as historical evidence.
 
 ## Sous-chef conveyor belt
 
-For each skewer, sequentially:
-
-1. Confirm plan assumptions against the current repository.
-2. Dispatch one fresh Skewer Mechanic.
-3. Answer context questions without widening scope.
-4. Require Raw → Sizzle → Rest evidence.
-5. Inspect the report and repository state yourself.
-6. Generate a task-scoped diff package from BASE to HEAD.
-7. Dispatch inspection with the task brief, report, diff package, and exact
-   restaurant-wide constraints.
-8. Run the fix loop for material findings.
-9. Record the completed task and revision in the ledger.
-10. Only then dispatch the next implementer.
-
-Do not run implementation agents concurrently when they share files, state,
-interfaces, or migration order. Faster collisions are still collisions.
+1. Reconcile run/plan identity and current assumptions; preflight task dependency
+   and shared-interface consistency against the spec.
+2. Capture a baseline. Dispatch the scoped Skewer Mechanic, or implement inline.
+   Same-shape small edits can be one reviewable batch. Do not split each keystroke
+   into an independent project solely to manufacture headcount.
+3. Answer context requests using evidence and settled decisions. Make delegated
+   reversible rulings; stop only dependent work for missing material authority.
+4. Require applicable Raw → Sizzle → Rest evidence, or the documented alternative
+   check for non-behavior/experimental work.
+5. Inspect the report and actual files. Build the complete task review package.
+6. Obtain both recipe and quality verdicts through an independent inspector when
+   available, otherwise the honest solo fallback. Resolve unverifiable assertions.
+7. Run the fix loop for material findings, record task evidence and completion,
+   and continue the approved plan without another “should I continue?” prompt.
 
 ## Lonely chef with clipboard
 
-When delegation is unavailable or the user selects inline execution:
+When delegation is absent, declined or unnecessary, critically read the plan and
+perform its scoped implementation and checks inline. Perform a distinct review
+pass against requirements and actual changes, recording two verdicts with
+`review_mode: self-reviewed` and `independence: unavailable` (or `not requested`).
+This satisfies the fallback gate; it is never called independent review.
+If the order explicitly requires an independent reviewer, report that unmet
+requirement instead of silently substituting self-review.
 
-1. Read and critically review the entire approved plan before starting.
-2. Raise contradictions before touching code.
-3. Create tracked tasks for every skewer.
-4. Execute each exact step in order with Raw → Sizzle → Rest evidence.
-5. Stop for missing authority, plan ambiguity, an unexpected dependency, or a
-   verification failure that the plan cannot explain.
-6. At logical batches, reconcile the ledger, task state, and diff before
-   continuing.
-7. Still request an independent final inspection when an agent or review tool
-   becomes available.
+The same material-defect and evidence standards apply. A tool limitation is not
+a discovered defect and does not by itself prohibit completing a task through the
+fallback. The clipboard does not create a second employee.
 
-The clipboard does not create independence. Inline self-review remains a
-fallback, never a counterfeit second inspector.
+## Inspector carousel and Five-alarm fix loop
 
-## Inspector carousel
+Every review has two separate verdicts:
 
-Each task receives two named verdicts:
+- **Recipe:** implements approved requirements without material scope expansion.
+- **Texture:** correct, clear, tested and proportionate to the task.
 
-1. **Recipe verdict:** does the result implement every approved requirement and
-   nothing materially outside it?
-2. **Texture verdict:** is the implementation correct, clear, tested,
-   maintainable, and proportionate?
+Give the inspector exact requirements and the actual reviewed snapshot. Do not
+pre-instruct it to ignore a suspected issue; adjudicate findings against evidence.
+Separate verified defects, unsupported concerns, and purely stylistic suggestions.
+For an item not verifiable within a task diff, the coordinator gathers the missing
+cross-task evidence before accepting a completion claim.
 
-A single inspector may produce both verdicts, but the implementer may not.
-Provide the exact diff range; never assume `HEAD~1` contains a multi-commit
-task.
+For material findings:
 
-Do not tell an inspector what not to flag. If a finding seems wrong, adjudicate
-it afterward with repository evidence.
+1. Rounds 1–3: return the actual finding to the original implementer when its live
+   context exists; otherwise use a fresh brief carrying the report and finding.
+2. Rounds 4–5: use fresh eyes and greater capability where authorized/available.
+   A model change alone is not a new hypothesis.
+3. Every round: fix, run covering checks, record evidence, re-review changed scope.
+4. After round 5: adjudicate remaining findings. A changed approved requirement
+   triggers recall; resolve routine implementation rulings within delegated scope.
+   An unresolved load-bearing defect stays blocked. Park only minor findings with
+   rationale for final review. Do not reset round numbering to bypass the limit.
 
-## Five-alarm fix loop
-
-Enter the loop for recipe failures and material quality findings.
-
-- Rounds 1–3: return findings verbatim to the original Skewer Mechanic.
-- Rounds 4–5: use fresh eyes and, where supported, a stronger model.
-- Every round: fix, rerun covering tests, append evidence to the report, and
-  dispatch a scoped re-inspection of the amended diff.
-- After round 5: adjudicate each remaining finding.
-
-If a remaining finding changes an approved decision or plan requirement, ask
-the user which governs. If it is load-bearing and unresolved, declare
-`KITCHEN_ON_FIRE` and stop. Park only genuinely minor findings in the ledger
-for final inspection.
-
-## Agent closing-time violations
-
-If an agent writes its contracted report but forgets to terminate:
-
-1. Verify the report is complete and matches repository state.
-2. Send one concise request to return the contracted status and finish.
-3. After a bounded wait, interrupt the agent.
-4. Record **Inspector Squatting** in the ledger.
-5. Continue only when the artifact itself contains every required verdict and
-   the coordinator can independently verify its evidence.
-
-If no complete artifact exists, treat the role as `KITCHEN_ON_FIRE`; never
-invent the missing verdict. A sub-agent's inability to clock out must not
-become an eternal-flame implementation detail.
+Finite heat passes examine artifacts; fix rounds repair findings. Do not multiply
+one loop by the other to create undocumented mandatory rework.
 
 ## Parallel buffet
 
-Parallelize only independent domains:
+Parallelize independent research, alternative design, non-overlapping artifacts,
+or implementation slices only when ownership, interfaces and mutable state are
+clear. Shared files, generated files, migrations and integration order count as
+shared state. Assign exact scopes, evidence targets and output contracts. If work
+cannot be safely separated, execute it sequentially. Review every result and run
+integrated checks when combining changes.
 
-- multiple unrelated failures;
-- separate repository reconnaissance areas;
-- independent primary-source research;
-- reviews of non-overlapping artifacts.
+For alternative design use [blind-tasting.md](blind-tasting.md); multiple role
+names in one context are not independent sources.
 
-Before dispatch:
+## Recovery and agent closing time
 
-1. Prove the domains do not share mutable state or files.
-2. Give each agent one focused question, evidence target, constraints, and
-   output contract.
-3. Dispatch all independent calls together.
-4. Review every result and check for contradictions.
-5. Run integrated verification after combining any changes.
+Persist task ID, agent handle, status, brief/report paths, snapshot and fix round.
+After compaction or interruption, follow [Cold-start recovery](traceability.md).
+Poll a specific confirmed live handle; a wait timeout does not mean it died.
+Continue unrelated local work while waiting. If the host reports a terminal or
+missing handle, inspect its report and files before deciding whether to redispatch.
 
-Never dispatch "fix everything." That is not parallelism; it is a buffet fight.
+If an agent wrote a complete report but will not return, inspect the artifact,
+send one finish request, then use a bounded wait and interrupt where supported.
+Record **Inspector Squatting**. Continue only when actual evidence contains every
+required result; do not invent a missing verdict. If the user stops, send the stop
+to owned live workers, preserve their changes and report any task that could not
+be stopped. Do not restart cancelled work without a new instruction.
 
-## Final inspection
+## Executive inspection and disposition
 
-After all skewers pass:
+Review the whole requested change against the spec/plan, current evidence and
+parked findings. Use an independent whole-change inspector when available, or
+label solo review. Permit a focused correction pass and scoped re-review, then
+adjudicate residuals. Do not claim completion with a load-bearing defect.
 
-1. Give the Executive Health Inspector the approved recipe, plan, complete
-   branch diff, test evidence, and deferred findings.
-2. Require recipe and quality verdicts across the whole branch.
-3. Permit one focused correction dispatch and one scoped re-inspection.
-4. Adjudicate residuals explicitly.
-5. Continue to the Thermometer Court only when no load-bearing finding remains.
-
-The coordinator verifies completion independently. Agent testimony cannot cook
-food.
+Reconcile the trace from goal to evidence, apply the remaining heat examinations,
+and enter the [Thermometer Court](food-safety-theater.md). Perform only the already
+authorized branch disposition; leave unrelated branches, worktrees and files alone.

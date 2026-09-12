@@ -1,0 +1,93 @@
+{
+  "recorded_at_utc": "2026-09-12T17:23:26.830303+00:00",
+  "base_commit": "80eef2405700c7523e1d7657459058dabd87690f",
+  "source_sha256": {
+    "SKILL.md": "c80633d2e187d520f9da8bf7b97a4f70e911bc68a3bf8ea070a17fce09fa242d",
+    "references/taste-test.md": "b5cb455bad7f8cf645334a7289da97fc65476c92a02566964e94b3869a54c9c0",
+    "references/food-safety-theater.md": "16ae3c6625a7ae46784f2829f4debd96fab96132d9b2b8053727ecbc5e99ce3b",
+    "references/recipe-deposition.md": "e5eee7767fa47c9548407dc1992c5c8646f77ab0f02491dfcc955feeb342cb1c",
+    "references/traceability.md": "cb5d503eb500912158954a78c9a8e2d2a051edcb8e29f592debf6e2b914492ac",
+    "references/blind-tasting.md": "aa25058b94517d60a97846788df608ba4f72dfa21f47051802b681f025c473c5",
+    "references/grill-levels.md": "9114fdc639064d399432d4642a80588aad6ea5e358dc705fbbed51cd9474c869",
+    "references/kitchen-industrial-complex.md": "d79eeab8a90c77e7cf0e1c92ea3c2b12644923de97bdefc15cce43c8e6df025f",
+    "references/easter-eggs.md": "16e7c1f7a371e2a6b49b48e5e2a592da011fe65065f2476b1e542db5c523b190",
+    "references/menu-inquisition.md": "c7b28b1500c2ed24b49612ed1088de9ec62b125f697d7c233b50d37d18e15290",
+    "scripts/state_graph.py": "886b67d6f27e5742beecccd941305deba21595ec9d1d9f273fbc21b533e5d328",
+    "scripts/review_evidence.py": "4efdf00f091f3a4227ae11d94a7ed89f01cfb29fa85a4cab8e0af65ebdbf3a10",
+    "tests/test_evidence_tools.py": "5ed8d45e3399def8c724de895f7f4fb493366e0469a95ab66b26226287356281",
+    "examples/ingredient-recall/state.json": "122e88c35c6c0e8f2a25c196051da0a2d9d745fb4e6ebb2af0a21f15e42aa245"
+  },
+  "results": [
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_captures_dirty_staged_untracked_and_detects_package_drift (test_evidence_tools.ReviewEvidenceTests.test_captures_dirty_staged_untracked_and_detects_package_drift) ... ok\ntest_deleted_selected_directory_keeps_deleted_descendants_without_root_marker (test_evidence_tools.ReviewEvidenceTests.test_deleted_selected_directory_keeps_deleted_descendants_without_root_marker) ... ok\ntest_directory_scope_tracks_new_and_deleted_files_and_rejects_escapes (test_evidence_tools.ReviewEvidenceTests.test_directory_scope_tracks_new_and_deleted_files_and_rejects_escapes) ... ok\ntest_missing_directory_scope_becomes_new_file_or_empty_directory (test_evidence_tools.ReviewEvidenceTests.test_missing_directory_scope_becomes_new_file_or_empty_directory) ... ok\ntest_no_commit_new_file_and_output_inside_repo_are_rejected (test_evidence_tools.ReviewEvidenceTests.test_no_commit_new_file_and_output_inside_repo_are_rejected) ... ok\ntest_unborn_baseline_and_tampered_snapshot_are_explicit (test_evidence_tools.ReviewEvidenceTests.test_unborn_baseline_and_tampered_snapshot_are_explicit) ... ok\ntest_verify_rejects_fabricated_readable_tree_file (test_evidence_tools.ReviewEvidenceTests.test_verify_rejects_fabricated_readable_tree_file) ... ok\ntest_cycle_and_existing_init_are_rejected (test_evidence_tools.StateGraphTests.test_cycle_and_existing_init_are_rejected) ... ok\ntest_init_identity_recall_and_transitive_invalidation (test_evidence_tools.StateGraphTests.test_init_identity_recall_and_transitive_invalidation) ... ok\ntest_malformed_history_and_failed_recall_leave_state_unchanged (test_evidence_tools.StateGraphTests.test_malformed_history_and_failed_recall_leave_state_unchanged) ... ok\ntest_missing_dependency_and_identity_failed_recall_do_not_write (test_evidence_tools.StateGraphTests.test_missing_dependency_and_identity_failed_recall_do_not_write) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 5.299s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/tmp/super-grill-v1-validation-env/bin/python",
+        "/Users/steve/.codex/skills/.system/skill-creator/scripts/quick_validate.py",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout": "Skill is valid!\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "claude",
+        "plugin",
+        "validate",
+        ".claude-plugin/plugin.json"
+      ],
+      "exit_code": 0,
+      "stdout": "Validating plugin manifest: /Users/steve/CodeLib/GitHub/super-grill/.claude-plugin/plugin.json\n\n\u2714 Validation passed\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "claude",
+        "plugin",
+        "validate",
+        "."
+      ],
+      "exit_code": 0,
+      "stdout": "Validating marketplace manifest: /Users/steve/CodeLib/GitHub/super-grill/.claude-plugin/marketplace.json\n\n\u2714 Validation passed\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/state_graph.py",
+        "validate",
+        "examples/ingredient-recall/state.json",
+        "--run-id",
+        "demo-recall",
+        "--plan-id",
+        "demo-plan"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"action\": \"validate\", \"node_count\": 7, \"ok\": true, \"plan_id\": \"demo-plan\", \"run_id\": \"demo-recall\", \"valid\": true}\n",
+      "stderr": ""
+    }
+  ]
+}

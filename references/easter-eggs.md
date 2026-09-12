@@ -8,8 +8,8 @@ unlocks in the Grill Ledger. Never let a gag hide a real question or blocker.
 | User phrase or situation | Response behavior |
 | --- | --- |
 | "This should be easy" / "just a tiny change" | Unlock **Famous Last Words**. Announce that the ceremony-to-code ratio has been upgraded. |
-| "Whatever" / "you decide" | Unlock **Chef's Choice**. Present the recommendation as the house special, but still obtain explicit confirmation. |
-| "Ship it" before the final gate | Unlock **Raw in the Middle**. Explain that shipping has been received as a request for plating review. |
+| "Whatever" / "you decide" | Unlock **Chef's Choice**. Record the delegated decision scope, then serve the house recommendation with rationale; do not ask again within that scope. |
+| "Ship it" before the final gate | Unlock **Raw in the Middle**. Finish the required evidence check, then honor the authorized delivery action; the joke does not revoke a shipping instruction. |
 | User reverses a settled decision | Unlock **Return to Marinade**. Update affected branches without scolding them. |
 | A one-line implementation has more than ten ledger decisions | Unlock **Enterprise Tapas**. |
 | The plan becomes longer than the expected code change | Unlock **Documentation-Driven Development**. |
@@ -23,9 +23,16 @@ unlocks in the Grill Ledger. Never let a gag hide a real question or blocker.
 | The decision frontier contains more nodes than the plan has tasks | Unlock **Questions as a Service**. |
 | A vocabulary dispute produces a decision card | Unlock **Semantic Marinade**. |
 | A fog item graduates into three new questions | Unlock **Fog Machine Achieved Product-Market Fit**. |
-| Code existed before a failing test was observed | Unlock **Microwave Retcon** and return it to Raw. |
+| A production regression test was written after its fix | Unlock **Microwave Retcon** and seek safe falsification evidence; preserve existing code. |
 | Three fixes fail without a root cause | Unlock **Architecture Arson Hearing**. |
 | The user says `take it off the grill` | Unlock **Health Inspector Intervention** and stop further questions immediately. |
+| Ingredient Recall marks only reachable dependents stale after an assumption changes | Unlock **Selective Amnesia, Professionally Applied**. Record the recalled IDs and preserve unaffected progress. |
+| A blind tasting report shows agreement across independently produced alternatives | Unlock **Consensus au Jus**. Record shared constraints, provenance, and the matching `E-*` evidence. |
+| A blind tasting report finds a meaningful disagreement | Unlock **Sauce Schism**. Preserve the divergent scenario and decision consequence instead of averaging it away. |
+| A taste test disproves its stated prediction | Unlock **Hypothesis, Tenderized**. Keep the result card and issue Ingredient Recall from the failed `A-*`. |
+| A test supports a prediction only within a stated sample or simulation | Unlock **Calibrated Confidence**. Record the limitation before anyone calls it proof. |
+| A resumed run reconciles its identity, current files, Git state, and live work without duplicate dispatch | Unlock **Mise en Place Recovered**. Record the checked run/plan IDs and restored task state. |
+| An unavailable independent reviewer is honestly reported as self-review | Unlock **Lonely Michelin Star**. Record the fallback and any material finding; no counterfeit independence badge. |
 
 ## Question-count achievements
 
@@ -70,7 +77,7 @@ Every ten decision questions:
 
 1. Summarize settled decisions and open branches.
 2. State how many questions have been asked.
-3. Remind the user that `take it off the grill` is the exit phrase.
+3. Remind the user that plain-language stop requests work; `take it off the grill` is the signature exit.
 4. Announce:
 
    > The flame is self-sustaining. Funding status unknown.
@@ -93,3 +100,9 @@ Every ten decision questions:
   **Chef Contaminated the Sample** and fix it before continuing.
 - If the task ends with zero code changes, unlock **Farm-to-Table Analysis**
   and present the decision artifact as the entrée.
+- If every candidate in a tasting shares the same fatal assumption, unlock
+  **Blind Tasting, Blind Spot** and run a question-led probe or reopen the
+  premise. The ceremony does not get credit for a unanimous mistake.
+- If a disposable prototype quietly starts acquiring production dependencies,
+  unlock **Prototype Has Started a Family** and end the experiment or obtain a
+  separate build decision.
